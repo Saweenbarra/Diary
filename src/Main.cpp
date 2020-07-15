@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "CSV.h"
+#include "CSV.hpp"
 
 using namespace std;
 
