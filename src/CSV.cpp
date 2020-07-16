@@ -1,19 +1,14 @@
 #include <iostream>
 #include <fstream>
-#include <string>
+#include "CSV.hpp"
 
 using namespace std;
 
-void read_all(){
-    ifstream input("../Diary.csv");
-	if (!input) cerr << "Could not open the file!" << endl;
-    ifstream myFile;
-	myFile.open("../Diary.csv");
 
-	while (myFile.good()) {
-		string line;
-		getline(myFile, line, ',');
-		cout << line << endl;
-	}
-	myFile.close();
+bool Entry::write (char* date, char* text){
+	ofstream file;
+	file.open("../Diary.csv", ios_base::app);
+	file << date << "," << text << endl;
+	file.close();
+	return true;
 }

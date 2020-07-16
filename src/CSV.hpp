@@ -1,1 +1,7 @@
-void read_all();
+#pragma once
+
+class Entry{
+    private:
+	public:
+	bool write (char* date, char* text);
+};
