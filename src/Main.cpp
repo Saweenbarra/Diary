@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 		}
 		if(write){
 			Entry entry;
-			bool success = entry.write(argc-3,argv[2], argv+3);
+			bool success = entry.write(argc-3,argv[2],argv+3);
 		}
 	}
 

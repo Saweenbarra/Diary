@@ -10,7 +10,7 @@ bool Entry::write (int count, char* date, char** word){
 	for(int i=0; i<count; i++){
 		file << *word;
 		if(i==count-1) break;
-		file << " ";
+		file << ",";
 		word++;
 	}
 	file << std::endl;
