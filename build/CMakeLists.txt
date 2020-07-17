@@ -8,7 +8,12 @@ add_library(
     ../src/CSV.hpp
     ../src/CSV.cpp
 )
+add_library(
+    Opt
+    ../src/Option.hpp
+    ../src/Option.cpp
+)
 
-target_link_libraries(Diary CSV)
+target_link_libraries(Diary CSV Opt)
 
 add_compile_options(-Wall)

@@ -1,7 +1,8 @@
 #pragma once
 
-class Entry{
+class Entry
+{
     private:
 	public:
-	bool write (int count,char* date, char** word);
+	void write (int count,char* date, char** word);
 };
