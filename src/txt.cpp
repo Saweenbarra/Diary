@@ -1,18 +1,18 @@
 #include <iostream>
 #include <fstream>
-#include "CSV.hpp"
+#include "txt.hpp"
 
 
 void Entry::write (int count, char* date, char** word)
 {
 	std::ofstream file;
-	file.open("../Diary.csv", std::ios_base::app);
-	file << date << ",";
+	file.open("../Diary.txt", std::ios_base::app);
+	file << date << ":";
 	for(int i=0; i<count; i++)
 	{
 		file << *word;
 		if(i==count-1) break;
-		file << ",";
+		file << " ";
 		word++;
 	}
 	file << std::endl;
