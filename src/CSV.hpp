@@ -3,5 +3,5 @@
 class Entry{
     private:
 	public:
-	bool write (char* date, char* text);
+	bool write (int count,char* date, char** word);
 };

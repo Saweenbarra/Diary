@@ -2,13 +2,18 @@
 #include <fstream>
 #include "CSV.hpp"
 
-using namespace std;
 
-
-bool Entry::write (char* date, char* text){
-	ofstream file;
-	file.open("../Diary.csv", ios_base::app);
-	file << date << "," << text << endl;
+bool Entry::write (int count, char* date, char** word){
+	std::ofstream file;
+	file.open("../Diary.csv", std::ios_base::app);
+	file << date << ",";
+	for(int i=0; i<count; i++){
+		file << *word;
+		if(i==count-1) break;
+		file << " ";
+		word++;
+	}
+	file << std::endl;
 	file.close();
 	return true;
 }

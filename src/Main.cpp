@@ -1,16 +1,31 @@
 #include <iostream>
+#include <unistd.h>
 #include "CSV.hpp"
 
-using namespace std;
-
 int main(int argc, char* argv[]) {
-	
+	int opt;
+	bool flag_fail = true;
+	bool write = false;
 	if(argc==1){
-		cout << "Usage: ./Diary add <date> <text>" << endl;
+		std::cout << "Usage: ./Diary -w <date> <text>" << std::endl;
+		return 0;
 	}
 	else{
-		Entry entry;
-		bool success = entry.write(argv[1], argv[2]);
+
+		while((opt = getopt(argc, argv, "w:"))!=-1){
+			flag_fail = false;
+			switch (opt){
+				case 'w': write = true; break;
+				default: std::cout << "Usage: ./Diary -w <date> <text>" << std::endl;
+			}
+		}
+		if(flag_fail){
+			std::cout << "Usage: ./Diary -w <date> <text>" << std::endl;
+		}
+		if(write){
+			Entry entry;
+			bool success = entry.write(argc-3,argv[2], argv+3);
+		}
 	}
 
 	return 0;
