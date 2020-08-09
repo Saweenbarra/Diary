@@ -8,4 +8,5 @@ int determine_option(int argc, char** argv)
     {
         return opt;
     }
+    return 0;
 }
